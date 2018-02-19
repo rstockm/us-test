@@ -1,0 +1,10 @@
+# gitignore
+# Ultraschall
+#
+
+## App
+*.app
+
+## Licence file
+*.rk
+
