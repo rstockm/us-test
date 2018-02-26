@@ -25,21 +25,12 @@
 ]]
  
 -------------------------------------
--- Print Message to console (debugging)
+-- Helper Functions
 -------------------------------------
 
-function Msg(val)
-  reaper.ShowConsoleMsg(tostring(val).."\n")
-end
-
--------------------------------------
--- run a command by its name
--------------------------------------
-
-function runcommand(cmd)	
-	start_id = reaper.NamedCommandLookup(cmd)
-	reaper.Main_OnCommand(start_id,0) 
-end
+local info = debug.getinfo(1,'S');
+script_path = info.source:match[[^@?(.*[\/])[^\/]-$]]
+dofile(script_path .. "ultraschall_helper_functions.lua")
 
 
 -------------------------------------
